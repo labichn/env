@@ -1,0 +1,4 @@
+TMP=$(setxkbmap -print | grep "swapcaps")
+if [ "$TMP" != '*swapcaps*' ]; then
+   setxkbmap -option ctrl:swapcaps
+fi

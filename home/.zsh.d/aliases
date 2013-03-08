@@ -1,0 +1,31 @@
+# misc
+alias c='clear'
+alias cl='clear'
+alias cle='clear'
+alias clea='clear'
+alias e='emacs -nw'
+alias extensions='find . -type f | grep -v git |   sed "s/\(.*\)\([\/.][^\/]*$\)/\2/"  | grep -v "^\/" | sort | uniq -c  | sort -nr | head -n 30'
+alias hack='source /home/nick/code/me/hack/hack'
+alias lastmod='find . -type f -printf "%T@ %p\n" | sort -n | tail -1 | cut -f2- -d" "'
+alias zzz='sudo systemctl suspend'
+alias agh='sudo systemctl poweroff'
+alias cabal-update="cabal list --simple-output --installed | awk '{print $1}' | uniq | xargs -I {} cabal install {} --reinstall"
+
+# ls
+alias ls='ls --group-directories-first --color=auto'
+alias l='ls'
+alias la='ls -a'
+alias ll='ls -lah'
+alias lr='ls -lRh'
+alias sl='ls'
+
+# default chmod settings for personal files and directories, recursively
+alias chmodds='find . -type d -exec chmod 700 {} \;'
+alias chmodes='find . -perm +100 -exec chmod 500 {} \;'
+alias chmodfs='find . -type f -exec chmod 600 {} \;'
+alias chmodd='find . -type d -exec chmod 755 {} \;'
+alias chmode='find . -perm +100 -exec chmod 755 {} \;'
+alias chmodf='find . -type f -exec chmod 644 {} \;'
+
+# langs
+alias rac='racket -il xrepl'

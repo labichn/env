@@ -1,0 +1,13 @@
+
+export AKKA_VERSION=2.0
+export AKKA_HOME=~/bin/.files/akka/akka-$AKKA_VERSION
+export AWT_TOOLKIT=MToolkit
+export EDITOR=emacs
+export SBT_VERSION=0.11.2
+export SCALA_VERSION=2.10.0-M2
+export SCALA_HOME=~/bin/.files/scala/scala-$SCALA_VERSION
+export SCALA_OPTIONS='-Yvirtpatmat -Yrepl-sync -deprecation'
+export PATH=/usr/bin:/usr/local/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin:/usr/bin/core_perl:/home/nick/bin:/home/nick/.cabal/bin
+export ME=/home/nick/code/me/
+export EXT=/home/nick/code/external/
+export ZSH=$HOME"/.oh-my-zsh"

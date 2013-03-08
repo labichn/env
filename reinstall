@@ -1,0 +1,13 @@
+#!/bin/bash
+
+if [ $# -eq 1 ]; then
+    for package in `cat $1`
+    do
+        pacman -S `cat $1 | sed 's/$$$.*//' | tr '\n' ' '`
+        # throws out versions... worrisome for arch
+    done
+    exit 0
+else
+    echo 'Usage: reinstall file'
+    exit 1
+fi

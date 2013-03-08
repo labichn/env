@@ -1,0 +1,69 @@
+Config { font = "-misc-fixed-*-*-*-*-12-*-*-*-*-*-*-*"
+       , bgColor = "black"
+       , fgColor = "grey"
+       , position = Top
+       , lowerOnStart = True
+       , commands = [ Run Uptime
+		          [ "-t", "Up: <days>d <hours>h <minutes>m" ] 600
+                    , Run Network "wlp2s0"
+                          [ "-t", " | <dev>: ↓<rx>Kb/s ↑<tx>Kb/s" ] 10
+                    , Run Wireless "wlp2s0" 
+                          [ "-a", "l"
+                          , "-w", "7"
+                          , "-t", "<essid> <qualitybar>"
+                          , "-L", "50"
+                          , "-H", "75"
+                          , "-l", "red"
+                          , "-n", "yellow"
+                          , "-h", "green"
+                          ] 10
+                    , Run MultiCpu
+		          [ "-L", "3"
+                          , "-H", "50"
+                          , "--normal", "green"
+                          , "--high", "red"
+                          , "-t", "<autototal>"
+                          ] 10
+                    , Run TopProc [] 10
+                    , Run Memory [ "-t", "<used>MB/<total>MB" ] 10
+                    , Run Com "uname" ["-s","-r"] "" 36000
+                    , Run Date "%H:%M:%S %a %b %_d %Y" "date" 10
+                    , Run DiskU
+                          [ ("/", "/: <used>/<size>")
+			  , ("/home", "/home: <used>/<size>")
+			  , ("/var", "/var: <used>/<size>")
+			  ]
+                          [ "-L", "20"
+                          , "-H", "50"
+                          , "-m", "1"
+                          , "-p", "3"
+                          ] 20
+                    , Run CoreTemp
+                          [ "-t", "<core0>°C"
+                          , "-L", "60"
+                          , "-H", "80"
+                          , "-l", "lightblue"
+                          , "-n", "gray90"
+                          , "-h", "red"
+                          ] 50
+                    , Run Battery
+                          [ "-t", "<left>%"
+                          , "-L", "10"
+                          , "-H", "80"
+                          , "-p", "3"
+                          , "--"
+                          , "-O", "<fc=green>On</fc> - "
+                          , "-o", ""
+                          , "-L", "-15"
+                          , "-H", "-5"
+                          , "-l", "red"
+                          , "-m", "blue"
+                          , "-h", "green"
+                          ] 100
+                    , Run Com "/home/nick/bin/vol" [] "volume" 10
+                    , Run Com "/home/nick/bin/charging" [] "charging" 100
+                    ]
+       , sepChar = "%"
+       , alignSep = "}{"
+       , template = "%battery%%charging% | %coretemp% | %disku% | %memory% | %wlp2s0wi%%wlp2s0% | %multicpu% | %top% }{ %date% | %uname% | %volume%"
+       }

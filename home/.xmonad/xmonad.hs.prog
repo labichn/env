@@ -1,0 +1,24 @@
+--defaultConfig = XConfig
+--    { XMonad.borderWidth        = borderWidth
+--    , XMonad.workspaces         = workspaces
+--    , XMonad.layoutHook         = layout
+--    , XMonad.terminal           = terminal
+--    , XMonad.normalBorderColor  = normalBorderColor
+--    , XMonad.focusedBorderColor = focusedBorderColor
+--    , XMonad.modMask            = defaultModMask
+--    , XMonad.keys               = keys
+--    , XMonad.logHook            = logHook
+--    , XMonad.startupHook        = startupHook
+--    , XMonad.mouseBindings      = mouseBindings
+--    , XMonad.manageHook         = manageHook
+--    , XMonad.handleEventHook    = handleEventHook
+--    , XMonad.focusFollowsMouse  = focusFollowsMouse
+--    }
+import Data.List
+
+import XMonad
+import XMonad.Hooks.ManageDocks
+import XMonad.Util.EZConfig
+
+myManageHook = composeAll
+    [ className =? "VLC

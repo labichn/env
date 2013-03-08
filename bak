@@ -1,0 +1,10 @@
+#!/bin/bash
+
+if [ $# -eq 1 ]; then
+    SYSTEM=`uname -n`
+    DATE=`date +%Y-%m-%d-%k-%M-%S`
+    `rsync -avz --progress /boot/initramfs-linux.img /boot/vmlinuz-linux /boot/grub/grub.cfg /etc /home/ /lib /lib64 /opt /root /sbin /srv /usr /var --exclude=/home/*/.gvfs $1$SYSTEM-$DATE`
+    exit 0
+else
+    echo 'Usage: bak directory'
+fi
