@@ -1,0 +1,18 @@
+;(setq quack-file-path "~/code/external/quack.el")
+;(load-file quack-file-path)
+;(require 'quack)
+
+(setq geiser-file-path "~/code/ext/geiser/elisp/geiser.el")
+(setq paredit-file-path "~/.emacs.d/paredit.el")
+(setq raco-doc-file-path "~/.emacs.d/raco-doc.el")
+(load-file geiser-file-path)
+(load-file paredit-file-path)
+(load-file raco-doc-file-path)
+(require 'raco-doc)
+(require 'geiser)
+(autoload 'paredit-mode "paredit"
+  "Minor mode for pseudo-structurally editing Lisp code." t)
+(add-hook 'emacs-lisp-mode-hook (lambda () (paredit-mode +1)))
+(add-hook 'lisp-mode-hook (lambda () (paredit-mode +1)))
+(add-hook 'lisp-interaction-mode-hook (lambda () (paredit-mode +1)))
+(add-hook 'scheme-mode-hook (lambda () (paredit-mode +1)))
