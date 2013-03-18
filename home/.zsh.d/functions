@@ -49,7 +49,7 @@ function get_battery_to_print {
     fi
 }
 function git_rm_hist {
-    git filter-branch --index-filter 'git rm --cached $1' HEAD
+    git filter-branch --index-filter "git rm --cached $1" HEAD
 }
 function get_path_to_print {
     local CURR=$PWD
