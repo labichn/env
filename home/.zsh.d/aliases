@@ -28,6 +28,10 @@ alias chmode='find . -perm +100 -exec chmod 755 {} \;'
 alias chmodf='find . -type f -exec chmod 644 {} \;'
 
 # langs
+<<<<<<< HEAD
 alias rac='racket -il xrepl'
 
 alias auths="git log --all --format='%aN <%cE>' | sort -u"
+=======
+alias rac='racket -il xrepl'
+>>>>>>> 051c59b158bd34abec34cc1472efb4edd3abbf9f
