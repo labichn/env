@@ -48,12 +48,6 @@ function get_battery_to_print {
         echo 'with '$bat'%% battery left (think about finding the holes)'
     fi
 }
-<<<<<<< HEAD
-function git_rm_hist {
-    git filter-branch --index-filter "git rm --cached "$1 HEAD
-}
-=======
->>>>>>> 051c59b158bd34abec34cc1472efb4edd3abbf9f
 function get_path_to_print {
     local CURR=$PWD
     echo 'CURR: '$CURR
